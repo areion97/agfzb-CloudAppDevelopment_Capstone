@@ -5,7 +5,7 @@ on: workflow_dispatch
 # Environment variables available to all jobs and steps in this workflow
 env:
   IBM_CLOUD_REGION: eu-gb
-  IBM_CLOUD_GROUP: default
+  IBM_CLOUD_GROUP: 1c7e291417e74ecb9ffabca3c451e9bc
   IBM_CLOUD_SPACE: andreasapp
   IBM_CLOUD_ORG:
   MANIFEST_NAME: manifest.yml
