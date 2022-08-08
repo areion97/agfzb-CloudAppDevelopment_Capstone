@@ -1,7 +1,7 @@
   applications:
-  - name: djangoapp
+  - name: myBeautifulApp123
     memory: 128M
     buildpack: python_buildpack
-  - name: djangoapp-nginx
+  - name: myBeautifulApp123-nginx
     memory: 128M
     buildpack: staticfile_buildpack

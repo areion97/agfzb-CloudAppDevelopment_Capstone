@@ -4,10 +4,10 @@ on: workflow_dispatch
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  IBM_CLOUD_REGION: us-south
-  IBM_CLOUD_GROUP: default
-  IBM_CLOUD_SPACE: dev
-  IBM_CLOUD_ORG:
+  IBM_CLOUD_REGION: eu-gb
+  IBM_CLOUD_GROUP: 1c7e291417e74ecb9ffabca3c451e9bc
+  IBM_CLOUD_SPACE: andreaspace
+  IBM_CLOUD_ORG: andrea.sestito97@gmail.com
   MANIFEST_NAME: manifest.yml
   IBM_CLOUD_API: ${{secrets.IBM_CLOUD_API_KEY}}
 
@@ -33,10 +33,10 @@ jobs:
         shell: bash
       - name: Log into IBM Cloud
         run: |
-          ibmcloud login --apikey "$IBM_CLOUD_API" -r "$IBM_CLOUD_REGION" -g "$IBM_CLOUD_GROUP"
+          ibmcloud login --apikey "$IBM_CLOUD_API" -r "$IBM_CLOUD_REGION"
         shell: bash
       - name: Target CF
-        run: ibmcloud target --cf-api https://api.$IBM_CLOUD_REGION.cf.cloud.ibm.com -r $IBM_CLOUD_REGION -o $IBM_CLOUD_ORG -s $IBM_CLOUD_SPACE
+        run: ibmcloud target --cf-api https://api.$IBM_CLOUD_REGION.cf.cloud.ibm.com -o $IBM_CLOUD_ORG -r $IBM_CLOUD_REGION -s $IBM_CLOUD_SPACE
         shell: bash
       - name: List all applications
         run: ibmcloud cf apps
